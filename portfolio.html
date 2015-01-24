@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	<title>Sara Pike Creative</title>
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/layout.css">
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>a
+	<![endif]-->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easing.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
+	<script type="text/javascript" src="http://www.queness.com/js/bsa.js"></script>
+
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+
+
+	<script type="text/javascript">
+	$(function () {
+
+		var filterList = {
+
+			init: function () {
+
+				// MixItUp plugin
+				// http://mixitup.io
+				$('#portfoliolist').mixitup({
+					targetSelector: '.portfolio',
+					filterSelector: '.filter',
+					effects: ['fade'],
+					easing: 'snap',
+					// call the hover effect
+					onMixEnd: filterList.hoverEffect()
+				});
+
+			},
+
+			hoverEffect: function () {
+
+				// Simple parallax effect
+				$('#portfoliolist .portfolio').hover(
+					function () {
+						$(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
+						$(this).find('img').stop().animate({top: -30}, 500, 'easeOutQuad');
+					},
+					function () {
+						$(this).find('.label').stop().animate({bottom: -165}, 200, 'easeInQuad');
+						$(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');
+					}
+				);
+
+			}
+
+		};
+
+		// Run the show!
+		filterList.init();
+
+
+	});
+	</script>
+
+</head>
+<body>
+
+	<div class="menu">
+    <div class="container clearfix">
+      <div id="nav" class="grid_12 omega">
+        <ul class="navigation" id="filters">
+					<li><span class="filter" data-filter="web">Web</span></li>
+					<li><span class="filter" data-filter="graphics">Graphics</span></li>
+					<li><span class="filter" data-filter="textiles">Fashion</span></li>
+					<li id="logo"><a href="index.html"><img src="images/logo.png"></a></li>
+					<li><span class="filter" data-filter="photog">Print</span></li>
+					<li><span class="filter" data-filter="brand">Branding</span></li>
+					<li><span class="filter active" data-filter="graphics textiles photog brand web">All</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+	<div class="container-portfolio">
+
+		<div id="portfoliolist">
+
+			<div class="portfolio image-border web graphics photog" data-cat="web">
+				<div class="portfolio-wrapper">
+					<img src="images/portfolios/web/10.jpg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">feelunique.com</a>
+							<span class="text-category">Front end coding &amp;design.</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>
+
+
+
+			<div class="portfolio brand photog web graphics image-border" data-cat="brand">
+				<div class="portfolio-wrapper">
+					<img src="images/portfolios/brand/3.jpg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title" href="http://www.bamboo.je" target="blank">Bamboo Construction</a>
+							<span class="text-category">I provided a complete rebrand of logo, website, business cards, signage and brochures to make the company stand out from their competitors with a fresh, bold new approach.</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="portfolio image-border brand photog web" data-cat="brand">
+				<div class="portfolio-wrapper">
+					<img src="images/portfolios/brand/2.jpg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title" href="http://www.vanillatherapy.co.uk" target="blank">Vanilla Therapy</a>
+							<span class="text-category">I was tasked with creating a brand for this mobile beauty therapist which conveyed a calming, holistic mood. Collateral included: logo, business cards, price lists, leaflets, gift vouchers &amp; a website.</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="portfolio image-border web" data-cat="web">
+				<div class="portfolio-wrapper">
+					<img src="images/portfolios/web/9.jpg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Mark Errington Studio</a>
+							<span class="text-category">Hand coded responsive portfolio site, featuring caregory filter and embedded jQuery video player.</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="portfolio image-border web" data-cat="web">
+				<div class="portfolio-wrapper">
+					<img src="images/portfolios/web/11.jpg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Supp.me</a>
+							<span class="text-category">Collaborative Ruby on Rails project for Digital Jersey - a resturant supplies ordering app for which I was responisble for front end coding &amp;design.</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="portfolio image-border textiles photog graphics" data-cat="textiles">
+				<div class="portfolio-wrapper">
+					<img src="images/portfolios/textiles/12.jpg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Element</a>
+							<span class="text-category">A collection of CAD fabrics designed for men &amp; women's surfwear, based on earth, air, fire &amp; water.</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="portfolio image-border brand" data-cat="brand">
+				<div class="portfolio-wrapper">
+					<img src="images/portfolios/web/12.jpg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Sans Pareil</a>
+							<span class="text-category">Company logo &amp; branding collateral for elite startup brand.</span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="portfolio image-border textiles photog" data-cat="textiles">
+				<div class="portfolio-wrapper">
+					<img src="images/portfolios/textiles/13.jpg" alt="" />
+					<div class="label">
+						<div class="label-text">
+							<a class="text-title">Journey of Discovery</a>
+							<span class="text-category">A collection of fabrics designed for the surf &amp; travel wear market, using unconventional fibres such as soya, bamboo, seaweed &amp; pineapple, microencapsulated with aloe &amp; eucalyptus extracts to give the wearer skin/ insect repellant/ UV benefits. </span>
+						</div>
+						<div class="label-bg"></div>
+					</div>
+				</div>
+			</div>
+
+		</div><!-- portfolio list -->
+
+	</div><!-- container -->
+
+</body>
+</html>
